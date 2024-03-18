@@ -1,8 +1,10 @@
 "use client";
 
-import { Typography } from "@material-tailwind/react";
+import React, { useState } from 'react';
+import { Typography, Button } from "@material-tailwind/react";
 import CourseCard from "@/components/course-card";
-
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 
 const COURSES = [
   {
@@ -91,7 +93,13 @@ const COURSES = [
   },
 ];
 
-export function ListBarang() {
+const ListBarang = () => {
+  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
+
+  const handleDateChange = (date: Date | null) => {
+      setSelectedDate(date);
+  };
+
   return (
     <section className="px-8 mt-12">
       <div className="container mx-auto mb-24 text-center">
@@ -105,6 +113,17 @@ export function ListBarang() {
         >
           Contoh list barang non medis. 
         </Typography>
+        {/* DateRangePicker */}
+        <div className="mt-5 !text-black">
+          <DatePicker
+            selected={selectedDate}
+            onChange={handleDateChange}
+            dateFormat="dd-MM-yyyy"
+            placeholderText="Pilih Tanggal"
+            className="border-2 border-solid border-gray-600 inline-block rounded-full text-center"
+            
+          />
+        </div>
       </div>
       <div className="container mx-auto grid grid-cols-1 gap-x-10 gap-y-12 md:grid-cols-2 lg:grid-cols-4 lg:gap-x-2">
         {COURSES.map((props, idx) => (
