@@ -48,14 +48,15 @@ const COURSES = [
   },
 ];
 
-export function ExploreCourses() {
+export function ListBarang() {
   return (
     <section className="px-8 pt-60">
       <div className="container mx-auto mb-24 text-center">
-        <Typography variant="h2" color="blue-gray">
-          Yang bener aja
+        <Typography placeholder variant="h2" color="blue-gray">
+          Barang Inventaris
         </Typography>
         <Typography
+          placeholder
           variant="lead"
           className="mt-2 mx-auto w-full px-4 !text-gray-500 lg:w-6/12 lg:px-8"
         >
@@ -72,4 +73,4 @@ export function ExploreCourses() {
   );
 }
 
-export default ExploreCourses;
+export default ListBarang;

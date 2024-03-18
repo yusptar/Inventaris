@@ -73,6 +73,7 @@ export function Footer() {
           </div>
         </div>
         <Typography
+          placeholder
           color="blue-gray"
           className="md:text-center mt-16 font-normal !text-gray-700"
         >

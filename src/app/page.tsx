@@ -5,7 +5,7 @@ import { Navbar, Footer } from "@/components";
 import Hero from "./hero";
 import OutImpressiveStats from "./out-impressive-stats";
 import CoursesCategories from "./courses-categories";
-import ExploreCourses from "./explore-courses";
+import ListBarang from "./barang";
 import Testimonial from "./testimonial";
 import Events from "./events";
 import StudentsFeedback from "./students-feedback";
@@ -18,7 +18,7 @@ export default function Campaign() {
       <Hero />
       {/* <OutImpressiveStats /> */}
       {/* <CoursesCategories /> */}
-      <ExploreCourses />
+      <ListBarang />
       {/* <Testimonial /> */}
       {/* <Events /> */}
       {/* <StudentsFeedback /> */}
