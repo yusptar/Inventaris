@@ -44,7 +44,9 @@ export function CourseCard({ img, tag, title, desc, label }: CourseCardProps) {
         <Typography placeholder className="mb-6 font-normal !text-gray-500">
           {desc}
         </Typography>
-        <Button placeholder variant="outlined">{label}</Button>
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+          <Button placeholder variant="outlined">{label}</Button>
+        </div>
       </CardBody>
     </Card>
   );

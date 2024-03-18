@@ -15,7 +15,7 @@ export default function Campaign() {
   return (
     <>
       <Navbar />
-      <Hero />
+      {/* <Hero /> */}
       {/* <OutImpressiveStats /> */}
       {/* <CoursesCategories /> */}
       <ListBarang />
