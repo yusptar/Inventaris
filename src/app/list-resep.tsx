@@ -89,11 +89,11 @@ const COURSES = [
     tag: "Medium • 33 Classes • 690 Students",
     title: "Pensil 1B",
     label: "Selesai",
-    desc: "Ini Pensil",
+    desc: "Jumlah 5",
   },
 ];
 
-const ListBarang = () => {
+const ListResep = () => {
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
 
   const handleDateChange = (date: Date | null) => {
@@ -104,16 +104,16 @@ const ListBarang = () => {
     <section className="px-8 mt-12">
       <div className="container mx-auto mb-24 text-center">
         <Typography placeholder variant="h2" color="blue-gray">
-          Barang Non Medis
+          List Resep Dokter
         </Typography>
-        <Typography
+        {/* <Typography
           placeholder
           variant="lead"
           className="mt-2 mx-auto w-full px-4 !text-gray-500 lg:w-6/12 lg:px-8"
         >
           Contoh list barang non medis. 
-        </Typography>
-        {/* DateRangePicker */}
+        </Typography> */}
+        {/* DatePicker */}
         <div className="mt-5 !text-black">
           <DatePicker
             selected={selectedDate}
@@ -121,7 +121,6 @@ const ListBarang = () => {
             dateFormat="dd-MM-yyyy"
             placeholderText="Pilih Tanggal"
             className="border-2 border-solid border-gray-600 inline-block rounded-full text-center"
-            
           />
         </div>
       </div>
@@ -134,4 +133,4 @@ const ListBarang = () => {
   );
 }
 
-export default ListBarang;
+export default ListResep;
