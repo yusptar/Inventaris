@@ -3,7 +3,7 @@ import Image from "next/image";
 
 
 interface CourseCardProps {
-  // img: string;
+  img: string;
   tag: string;
   title: string;
   desc: string;
@@ -13,15 +13,6 @@ interface CourseCardProps {
 export function CourseCard({ tag, title, desc, label }: CourseCardProps) {
   return (
     <Card placeholder className="border">
-      {/* <CardHeader placeholder className="h-64">
-        <Image
-          width={768}
-          height={768}
-          src={img}
-          alt={title}
-          className="h-full w-full object-cover scale-[1.1]"
-        />
-      </CardHeader> */}
       <CardBody placeholder>
         <div className="flex items-center gap-2">
           <Typography
