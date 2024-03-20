@@ -1,10 +1,7 @@
 import axios from "axios";
 
-export const BASE_URL = "https://rssoepraoen.com/api-website/api";
-// export const BASE_URL = "http://192.168.10.229:8000/api";
-// export const BASE_URL = "http://192.168.10.153:8000/api";
-export const WEBSERVICE_URL = "https://rssoepraoen.com/bios/api";
-// export const WEBSERVICE_URL = "http://192.168.10.229:8001/api";
+export const BASE_URL = "https://rssoepraoen.com/api-layanan/api";
+export const WEBSERVICE_URL = "https://rssoepraoen.com/api-website/api";
 export const IMAGE_URL = "https://rssoepraoen.com/api-website/storage";
 
 export const HTTP = {

@@ -79,7 +79,7 @@ export function Navbar() {
         >
           <div className="flex items-center justify-between">
             <Typography placeholder color="blue-gray" className="text-lg font-bold">
-              Resep Dokter
+              Resep Obat Pasien
             </Typography>
             <ul className="ml-10 hidden items-center gap-8 lg:flex">
               {/* {NAV_MENU.map(({ name, icon: Icon, href }) => (
