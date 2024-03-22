@@ -10,9 +10,9 @@ import 'react-datepicker/dist/react-datepicker.css';
 const ListResep = () => {
   // INIT DATA
   const [listResep, setListResep] = useState<{ 
-    no_resep: string; 
+    no_resep: string;
+    reg_periksa: string;
     status: string;
-    no_rkm_medis: string; 
     nm_pasien: string;
     nm_poli: string;
     nama_brng: string;
@@ -47,7 +47,6 @@ const ListResep = () => {
   const filterByDateRange = (resep: {
     no_resep: string;
     status: string;
-    no_rkm_medis: string;
     nm_pasien: string;
     nm_poli: string;
     nama_brng: string;
@@ -104,17 +103,20 @@ const ListResep = () => {
                   className="text-blue-gray-900 transition-colors hover:text-gray-900"
                 >
                   <Typography placeholder variant="h5" className="mb-2 normal-case">
-                    {resep.nm_pasien} - {resep.no_rkm_medis}
+                    {resep.reg_periksa.pasien.nm_pasien} - {resep.reg_periksa.no_rkm_medis}
+                  </Typography>
+                  <Typography placeholder className="mb-6 font-bold !text-black">
+                    No.Resep : {resep.no_resep}
                   </Typography>
                 </a>
                 <Typography placeholder className="mb-6 font-bold !text-black">
-                  {resep.nm_poli}
+                  {resep.reg_periksa.poliklinik.nm_poli}
                 </Typography>
                 <Typography placeholder className="mb-1 font-normal !text-gray-700">
-                  Non Racikan - {resep.nama_brng}
+                  Non Racikan : {resep.nama_brng}
                 </Typography>
                 <Typography placeholder className="mb-6 font-normal !text-gray-700">
-                  Racikan - {resep.nama_brng}
+                  Racikan : {resep.nama_brng}
                 </Typography>
                 <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                   <Button 
