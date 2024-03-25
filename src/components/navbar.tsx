@@ -40,7 +40,7 @@ function NavItem({ children, href }: NavItemProps) {
   return (
     <li>
       <Typography
-        placeholder
+        placeholder onPointerEnterCapture onPointerLeaveCapture
         as="a"
         href={href || "#"}
         target={href ? "_blank" : "_self"}
@@ -72,13 +72,13 @@ export function Navbar() {
     <div className="px-10 sticky top-4 z-50">
       <div className="mx-auto container">
         <MTNavbar
-          placeholder
+          placeholder onPointerEnterCapture onPointerLeaveCapture
           blurred
           color="white"
           className="z-50 mt-6 relative border-0 pr-3 py-3 pl-6"
         >
           <div className="flex items-center justify-between">
-            <Typography placeholder color="blue-gray" className="text-lg font-bold">
+            <Typography placeholder onPointerEnterCapture onPointerLeaveCapture color="blue-gray" className="text-lg font-bold">
               Resep Obat Pasien
             </Typography>
             <ul className="ml-10 hidden items-center gap-8 lg:flex">
@@ -99,7 +99,7 @@ export function Navbar() {
               </a> */}
             </div>
             <IconButton
-              placeholder
+              placeholder onPointerEnterCapture onPointerLeaveCapture
               variant="text"
               color="gray"
               onClick={handleOpen}
@@ -123,12 +123,12 @@ export function Navbar() {
                 ))}
               </ul>
               <div className="mt-6 mb-4 flex items-center gap-4">
-                <Button placeholder variant="text">Log in</Button>
+                <Button placeholder onPointerEnterCapture onPointerLeaveCapture variant="text">Log in</Button>
                 <a
                   href="https://www.material-tailwind.com/blocks"
                   target="_blank"
                 >
-                  <Button placeholder color="gray">blocks</Button>
+                  <Button placeholder onPointerEnterCapture onPointerLeaveCapture color="gray">blocks</Button>
                 </a>
               </div>
             </div>
