@@ -9,22 +9,13 @@ import 'react-datepicker/dist/react-datepicker.css';
 
 const ListResep = () => {
   // INIT DATA
-  const [listResep, setListResep] = useState<{ 
+  const [listResep, setListResep] = useState<{
+    resep: any; 
     no_resep: string;
-    reg_periksa: {
-      pasien: {
-          nm_pasien: string;
-          // tambahkan properti lain yang diperlukan dari objek pasien
-      },
-      no_rkm_medis: string;
-      poliklinik: {
-          nm_poli: string;
-      };
-      // tambahkan properti lain yang diperlukan dari objek reg_periksa
-    };
-    status: string;
     nm_pasien: string;
+    no_rkm_medis: string;
     nm_poli: string;
+    status: string;
     nama_brng: string;
     tgl_peresepan: Date | string;
     }[]>([]);
@@ -36,7 +27,7 @@ const ListResep = () => {
   // FETCH DATA
   const fetchResep = async () => {
     const res = await HTTP.GET("/resep-obat");
-    setListResep(res.data.result.resep);
+    setListResep(res.data.result);
   };
 
   const handleCompleteButtonClick = (index: any) => {
@@ -67,6 +58,8 @@ const ListResep = () => {
     return tglPeresepan >= selectedStartDate && tglPeresepan <= selectedEndDate;
   };
 
+  console.log(listResep)
+
   return (
     <section className="px-8 mt-12">
       <div className="container mx-auto mb-24 text-center">
@@ -95,7 +88,7 @@ const ListResep = () => {
         </div>
       </div>
       <div className="container mx-auto grid grid-cols-1 gap-x-10 gap-y-12 md:grid-cols-2 lg:grid-cols-4 lg:gap-x-2">
-        {listResep.filter(filterByDateRange).map((resep, index) => (
+        {listResep.filter(filterByDateRange).map((result, index) => (
             <Card placeholder onPointerEnterCapture onPointerLeaveCapture className="border" key={index}>
               <CardBody  placeholder onPointerEnterCapture onPointerLeaveCapture >
                 {/* <div className="flex items-center gap-2">
@@ -109,20 +102,39 @@ const ListResep = () => {
                   </Typography>
                 </div> */}
                 <Typography placeholder onPointerEnterCapture onPointerLeaveCapture variant="h5" className="mb-2 font-bold !text-black">
-                  {resep.reg_periksa.pasien.nm_pasien} - {resep.reg_periksa.no_rkm_medis}
+                  {result.pasien.pasien.nm_pasien} - {result.pasien.no_rkm_medis}
                 </Typography>
                 <Typography placeholder onPointerEnterCapture onPointerLeaveCapture className="mb-6 font-bold !text-black">
-                  No.Resep : {resep.no_resep}
+                  No.Resep : {result.no_resep}
                 </Typography>
                 <Typography  placeholder onPointerEnterCapture onPointerLeaveCapture className="mb-6 font-bold !text-black">
-                  {resep.reg_periksa.poliklinik.nm_poli}
+                  {result.pasien.poliklinik.nm_poli}
                 </Typography>
-                <Typography   placeholder onPointerEnterCapture onPointerLeaveCapture className="mb-1 font-normal !text-gray-700">
-                  Non Racikan : {resep.nama_brng}
+                <Typography placeholder onPointerEnterCapture onPointerLeaveCapture className="mb-1 font-normal !text-gray-700">
+                  {/* Non Racikan:<br></br> */}
+                  {result.resep.map((item, index) => {
+                    return (
+                      <span key={index}>
+                        {index + 1}. {item.nama_brng}
+                        <br></br>
+                        Jumlah : {item.jml && ` (${item.jml})`}
+                        <br></br>
+                        Signa : {item.signa && ` (${item.signa})`}
+                        <br></br>
+                        {index !== result.resep.length - 1}
+                        <br></br>
+                      </span>
+                    );
+                  })}
                 </Typography>
-                <Typography  placeholder onPointerEnterCapture onPointerLeaveCapture className="mb-6 font-normal !text-gray-700">
-                  Racikan : {resep.nama_brng}
-                </Typography>
+                <br></br>
+                {/* <Typography   placeholder onPointerEnterCapture onPointerLeaveCapture className="mb-1 font-normal !text-gray-700">
+                  Non Racikan : {result.resep.map((item) => {return (item.nama_brng + "("+item.jml+") ")})}
+                                {result.resep.jml}
+                </Typography> */}
+                {/* <Typography  placeholder onPointerEnterCapture onPointerLeaveCapture className="mb-6 font-normal !text-gray-700">
+                  Racikan : {result.resep.nama_brng}
+                </Typography> */}
                 <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                   <Button 
                     placeholder onPointerEnterCapture onPointerLeaveCapture
