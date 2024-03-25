@@ -128,7 +128,7 @@ const ListResep = () => {
                 </Typography>
                 <Typography placeholder onPointerEnterCapture onPointerLeaveCapture className="mb-1 font-normal !text-gray-700">
                   {/* Non Racikan:<br></br> */}
-                  {result.resep.map((item, index) => {
+                  {Array.isArray(result.resep) && result.resep.map((item, index) => {
                     return (
                       <span key={index}>
                         {index + 1}. {item.nama_brng}
