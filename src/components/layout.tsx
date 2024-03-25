@@ -1,10 +1,14 @@
 "use client";
 
-import React, { ReactNode } from "react";
+import React from "react";
 import { ThemeProvider } from "@material-tailwind/react";
 
-export function Layout({ children }: { children: ReactNode }) {
-  return <ThemeProvider>{children !== undefined ? children : null}</ThemeProvider>;
+export function Layout({ children }: { children?: React.ReactNode }) {
+  return (
+    <>
+      {children && <ThemeProvider>{children}</ThemeProvider>}
+    </>
+  );
 }
 
 export default Layout;
