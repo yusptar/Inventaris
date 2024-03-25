@@ -11,7 +11,17 @@ const ListResep = () => {
   // INIT DATA
   const [listResep, setListResep] = useState<{ 
     no_resep: string;
-    reg_periksa: string;
+    reg_periksa: {
+      pasien: {
+          nm_pasien: string;
+          // tambahkan properti lain yang diperlukan dari objek pasien
+      },
+      no_rkm_medis: string;
+      poliklinik: {
+          nm_poli: string;
+      };
+      // tambahkan properti lain yang diperlukan dari objek reg_periksa
+    };
     status: string;
     nm_pasien: string;
     nm_poli: string;
