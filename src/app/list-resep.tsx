@@ -53,14 +53,21 @@ const ListResep = () => {
   };
 
   const filterByDateRange = (resep: {
-    pasien: string;
+    pasien: {
+      no_rkm_medis: string;
+      pasien : {
+        nm_pasien : string;
+      }
+      poliklinik : {
+        nm_poli: string;
+      }
+    }
     resep: string; 
     no_resep: string;
-    status: string;
-    nm_pasien: string;
     nm_poli: string;
+    status: string;
     nama_brng: string;
-    tgl_peresepan: Date | string; // Sesuaikan dengan tipe data tgl_peresepan
+    tgl_peresepan: Date | string;
   }) => {
     if (!selectedStartDate || !selectedEndDate) return true;
     const tglPeresepan = typeof resep.tgl_peresepan === 'string' ? new Date(resep.tgl_peresepan) : resep.tgl_peresepan;
