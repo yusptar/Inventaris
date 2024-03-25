@@ -86,8 +86,8 @@ const ListResep = () => {
       </div>
       <div className="container mx-auto grid grid-cols-1 gap-x-10 gap-y-12 md:grid-cols-2 lg:grid-cols-4 lg:gap-x-2">
         {listResep.filter(filterByDateRange).map((resep, index) => (
-            <Card placeholder className="border" key={index}>
-              <CardBody placeholder>
+            <Card placeholder onPointerEnterCapture onPointerLeaveCapture className="border" key={index}>
+              <CardBody  placeholder onPointerEnterCapture onPointerLeaveCapture >
                 {/* <div className="flex items-center gap-2">
                   <Typography
                     placeholder
@@ -102,25 +102,25 @@ const ListResep = () => {
                   href="#"
                   className="text-blue-gray-900 transition-colors hover:text-gray-900"
                 >
-                  <Typography  variant="h5" className="mb-2 normal-case">
+                  <Typography placeholder onPointerEnterCapture onPointerLeaveCapture variant="h5" className="mb-2 normal-case">
                     {resep.reg_periksa.pasien.nm_pasien} - {resep.reg_periksa.no_rkm_medis}
                   </Typography>
-                  <Typography  className="mb-6 font-bold !text-black">
+                  <Typography placeholder onPointerEnterCapture onPointerLeaveCapture className="mb-6 font-bold !text-black">
                     No.Resep : {resep.no_resep}
                   </Typography>
                 </a>
-                <Typography  className="mb-6 font-bold !text-black">
+                <Typography  placeholder onPointerEnterCapture onPointerLeaveCapture className="mb-6 font-bold !text-black">
                   {resep.reg_periksa.poliklinik.nm_poli}
                 </Typography>
-                <Typography  className="mb-1 font-normal !text-gray-700">
+                <Typography   placeholder onPointerEnterCapture onPointerLeaveCapture className="mb-1 font-normal !text-gray-700">
                   Non Racikan : {resep.nama_brng}
                 </Typography>
-                <Typography className="mb-6 font-normal !text-gray-700">
+                <Typography  placeholder onPointerEnterCapture onPointerLeaveCapture className="mb-6 font-normal !text-gray-700">
                   Racikan : {resep.nama_brng}
                 </Typography>
                 <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                   <Button 
-                    placeholder 
+                    placeholder onPointerEnterCapture onPointerLeaveCapture
                     variant="outlined"
                     onClick={() => handleCompleteButtonClick(index)} // Panggil fungsi untuk menghapus item
                   >
