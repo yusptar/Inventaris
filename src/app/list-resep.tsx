@@ -26,7 +26,7 @@ const ListResep = () => {
   // FETCH DATA
   const fetchResep = async () => {
     const res = await HTTP.GET("/resep-obat");
-    setListResep(res.data.result);
+    setListResep(res.data.result.resep);
   };
 
   const handleCompleteButtonClick = (index: any) => {
