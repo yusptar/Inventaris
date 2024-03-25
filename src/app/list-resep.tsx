@@ -60,7 +60,7 @@ const ListResep = () => {
   return (
     <section className="px-8 mt-12">
       <div className="container mx-auto mb-24 text-center">
-        <Typography variant="h2" color="blue-gray">
+        <Typography placeholder onPointerEnterCapture onPointerLeaveCapture variant="h2" color="blue-gray">
           List Resep Obat Pasien
         </Typography>
         {/* <Typography
