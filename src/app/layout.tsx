@@ -10,7 +10,7 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "Inventaris | Rumah Sakit Tk.II dr.Soepraoen",
+  title: "Depo III | Rumah Sakit Tk.II dr.Soepraoen",
   description:
     "Introducing Tailwind Course Landing Page, a versatile and engaging landing page template designed using Tailwind CSS and Material Tailwind.",
 };
