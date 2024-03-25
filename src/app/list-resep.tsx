@@ -10,10 +10,17 @@ import 'react-datepicker/dist/react-datepicker.css';
 const ListResep = () => {
   // INIT DATA
   const [listResep, setListResep] = useState<{
-    resep: any; 
+    pasien: {
+      no_rkm_medis: string;
+      pasien : {
+        nm_pasien : string;
+      }
+      poliklinik : {
+        nm_poli: string;
+      }
+    }
+    resep: string; 
     no_resep: string;
-    nm_pasien: string;
-    no_rkm_medis: string;
     nm_poli: string;
     status: string;
     nama_brng: string;
@@ -46,6 +53,8 @@ const ListResep = () => {
   };
 
   const filterByDateRange = (resep: {
+    pasien: string;
+    resep: string; 
     no_resep: string;
     status: string;
     nm_pasien: string;
