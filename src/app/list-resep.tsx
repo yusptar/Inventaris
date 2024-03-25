@@ -60,7 +60,7 @@ const ListResep = () => {
   return (
     <section className="px-8 mt-12">
       <div className="container mx-auto mb-24 text-center">
-        <Typography>
+        <Typography variant="h2" color="blue-gray">
           List Resep Obat Pasien
         </Typography>
         {/* <Typography
@@ -102,20 +102,20 @@ const ListResep = () => {
                   href="#"
                   className="text-blue-gray-900 transition-colors hover:text-gray-900"
                 >
-                  <Typography placeholder variant="h5" className="mb-2 normal-case">
+                  <Typography  variant="h5" className="mb-2 normal-case">
                     {resep.reg_periksa.pasien.nm_pasien} - {resep.reg_periksa.no_rkm_medis}
                   </Typography>
-                  <Typography placeholder className="mb-6 font-bold !text-black">
+                  <Typography  className="mb-6 font-bold !text-black">
                     No.Resep : {resep.no_resep}
                   </Typography>
                 </a>
-                <Typography placeholder className="mb-6 font-bold !text-black">
+                <Typography  className="mb-6 font-bold !text-black">
                   {resep.reg_periksa.poliklinik.nm_poli}
                 </Typography>
-                <Typography placeholder className="mb-1 font-normal !text-gray-700">
+                <Typography  className="mb-1 font-normal !text-gray-700">
                   Non Racikan : {resep.nama_brng}
                 </Typography>
-                <Typography placeholder className="mb-6 font-normal !text-gray-700">
+                <Typography className="mb-6 font-normal !text-gray-700">
                   Racikan : {resep.nama_brng}
                 </Typography>
                 <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
