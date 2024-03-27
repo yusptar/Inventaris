@@ -59,7 +59,7 @@ const ListResep = () => {
     <section className="px-8 mt-12">
       <div className="container mx-auto mb-24 text-center">
         <Typography placeholder onPointerEnterCapture onPointerLeaveCapture variant="h2" color="blue-gray">
-          List Resep Obat Pasien
+          List Resep Obat
         </Typography>
         {/* <Typography
           placeholder
